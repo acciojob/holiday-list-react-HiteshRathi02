@@ -14,7 +14,6 @@ const App = () => {
     { name: 'Museum Island', country: 'Germany' },
     { name: 'Munnar', country: 'India' },
     { name: 'Leh Ladakh', country: 'India' },
-    { name: 'Goa', country: 'India' },
     { name: 'Agra', country: 'India' },
     { name: 'Dalhousie', country: 'India' },
     { name: 'Coorg', country: 'India' },
@@ -32,10 +31,22 @@ const App = () => {
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
     ]
+
+    
+    const indianCities = cityList.filter(city => city.country === "India");
     
   return (
     <div id="main">
-               {/* Do not remove the main div */}
+      <h2>Destinations in India</h2>
+      <ol>
+               {indianCities.map((city,index)=>{
+                return(
+                    <li key={`location${index+1}`}>
+                      {city.name}
+                    </li>
+                )
+               })}
+               </ol>
     </div>
   )
 }
